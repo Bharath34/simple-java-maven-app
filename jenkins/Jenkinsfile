@@ -18,7 +18,7 @@ pipeline {
                 }
                 failure  {
                     emailext  (
-                to: "letstrydvops@gmail.com",
+                to: "makeitnow3454@gmail.com",
                 subject: "Job Failed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """=== Job Details as Below === 
                   Job Name = '${env.JOB_NAME}'
@@ -46,12 +46,12 @@ pipeline {
         }
         stage('Store-in-S3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/jobs/junkingjenkins/workspace/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/bunny/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
             }
         }
         stage('Store-in-S3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/jobs/junkingjenkins/workspace/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Nam}/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/bunny/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Nam}/"
             }
         }
     }
