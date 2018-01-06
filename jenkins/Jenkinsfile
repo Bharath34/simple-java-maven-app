@@ -11,10 +11,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
-            post {
-                success  {
-                    slackSend (message: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                }
+            
                 failure  {
                     emailext  (
                 to: "makeitnow354gmail.com",
@@ -27,7 +24,7 @@ pipeline {
             )
                 }
             }
-        }
+        
         stage('Test') {
             steps {
                 sh 'mvn test'
