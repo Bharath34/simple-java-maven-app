@@ -1,5 +1,5 @@
 properties([parameters([string(name: 'Bucket_Name', defaultValue: 'jenkinesbucket')])])
-properties([parameters([string(name: 'Bucket_Nam', defaultValue: 'bunnycloud')])])
+properties([parameters([string(name: 'Bucket_Nam', defaultValue: 'jenkines2')])])
 pipeline {
     agent {
         docker {
