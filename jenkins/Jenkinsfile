@@ -1,5 +1,4 @@
 properties([parameters([string(name: 'Bucket_Name', defaultValue: 'jenkinesbucket')])])
-properties([parameters([string(name: 'Bucket_Nam', defaultValue: 'jenkine2')])]
 pipeline {
     agent {
         docker {
@@ -50,10 +49,6 @@ pipeline {
                 
             }
         }
-        stage('Deliver'){
-            steps {
-                sh sh "aws s3 cp /var/lib/jenkins/workspace/bunny/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Nam}/"
-            }
-        }
+       
     }
 }
