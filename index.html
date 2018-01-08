@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Btree solution.Inc</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=3">
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
+	<link rel="stylesheet" href="css/home.css">
+	<script type="text/javascript" src="lib/js/jquery.js"></script>
+	<script type="text/javascript" src="lib/js/bootstrap.js"></script>
+</head>
+<body id="index">
+	<div class="container outer">
+		<marquee class="title">Btree solution.Inc</marquee>
+		<form class="form-horizontal inner" name="form_data" id="form" novalidate>
+			<div id="existing-user" style="display: none;" class="border">
+				<h2 class="text-center">Member </h2>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="card">LOGIN ID:</label>
+					<div class="col-sm-9">
+						<input type="text" name="Member-Id" class="form-control" id="card" placeholder="Enter 6 digit number" maxlength="6" required
+						    onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+							<p id="zero" class="error"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-3 col-sm-9">
+						<button type="button" class="btn btn-primary" onclick="checkLogin()" id="action">Submit</button>
+						<button type="button" class="btn btn-primary" disabled id="loading" style="display:none">Loading...</button>
+						<span style="color: #fff">Non-Exisiting User? Register <mark><a onclick="toggle('new')" class="link">here</a></mark></span>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form class="form-horizontal inner" name="form_data" id="registerForm" novalidate>
+			<div id="new-user" style="display: none;" class="border">
+				<h2 class="text-center">REGISTER HERE TO BECOME A BTREE SOLUTION.INC MEMEBER</h2>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="fName">Full Name:</label>
+					<div class="col-sm-9">
+						<input type="text" name="fName" class="form-control" id="fName" placeholder="Enter Full Name" required />
+						<p id="one"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="dName">Display Name:</label>
+					<div class="col-sm-9">
+						<input type="text" name="dName" class="form-control" id="dName" placeholder="Enter Display Name" required>
+						<p id="two"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="dName">Gender:</label>
+					<div class="col-sm-9">
+						<div class="radio">
+							<label><input type="radio" name="r1" value="M">Male</label>
+							<label><input type="radio" name="r1" value="F">Female</label>
+							<p id="three" class="pull-right"></p>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="email">Email:</label>
+					<div class="col-sm-9">
+						<input type="email" name="email" class="form-control" id="email" placeholder="Enter Email Address" required>
+						<p id="four"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="aEmail">Alternate Email:</label>
+					<div class="col-sm-9">
+						<input type="email" name="aEmail" class="form-control" id="aEmail" placeholder="Enter Alternate Email Address" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="password">Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
+						<p id="five"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="cPassword">Confirm Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="cPassword" class="form-control" id="cPassword" placeholder="Enter Confirm Password">
+						<p id="six"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-3 col-sm-9">
+						<div class="checkbox">
+							<label><input type="checkbox"> Remember me</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-3 col-sm-9">
+						<button type="button" class="btn btn-primary" onclick="register()" id="action1">Submit</button>
+						<button type="button" class="btn btn-primary" disabled id="loading1" style="display:none">Loading...</button>
+						<button type="button" class="btn btn-default" onclick="toggle('existing')">Cancel</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="js/home.js"></script>
+
+</html>
